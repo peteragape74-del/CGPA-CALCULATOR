@@ -1,46 +1,36 @@
 # CGPA-CALCULATOR
 A python made CGPA calculator
+This script calculates CGPA based on credit units and grades.
 
-total_credit_hours = 0
-total_weighted_grade_points = 0
+# CGPA Calculator
 
-num_courses_str = input("Enter the number of courses: ")
-num_courses = int(num_courses_str)
+A simple Python program to calculate Cumulative Grade Point Average (CGPA) based on credit hours and grades.
 
-# Loop through each course to get details
-current_course = 0
-while current_course < num_courses:
-    print("\n--- Course " + str(current_course + 1) + " ---")
-    
-    credit_hours_str = input("Enter credit hours for this course: ")
-    credit_hours = float(credit_hours_str)
-    
-    grade_letter = input("Enter grade (A, B, C, D, F) for this course: ").upper()
-    
-    grade_point = 0.0
-    if grade_letter == 'A':
-        grade_point = 5.0
-    elif grade_letter == 'B':
-        grade_point = 4.0
-    elif grade_letter == 'C':
-        grade_point = 3.0
-    elif grade_letter == 'D':
-        grade_point = 2.0
-    elif grade_letter == 'F':
-        grade_point = 0.0
-    else:
-        print("Invalid grade entered. Assuming F (0.0 points).")
-        grade_point = 0.0
-        
-    total_credit_hours = total_credit_hours + credit_hours
-    total_weighted_grade_points = total_weighted_grade_points + (credit_hours * grade_point)
-    
-    current_course = current_course + 1
+### How It Works
+1. Asks the user for the number of courses
+2. Loops through each course to collect credit hours and grade
+3. Calculates: CGPA = Total Weighted Grade Points / Total Credit Hours
 
-# Calculate CGPA
-if total_credit_hours > 0:
-    cgpa = total_weighted_grade_points / total_credit_hours
-    print("\n------------------------------------")
-    print("Your calculated CGPA is: " + str(round(cgpa, 2)))
-else:
-    print("\nNo courses entered or total credit hours are zero. Cannot calculate CGPA.")
+### Features
+- Takes user input for multiple courses
+- Calculates total credit hours and weighted grade points
+- Displays final CGPA
+
+### How To Run
+1. Make sure you have Python installed
+2. Download or clone this repository
+3. Run the file:
+   python cgpa_calculator.py
+
+### Example
+Enter the number of courses: 3
+Course 1 - Credit hours: 3, Grade point: 5
+Course 2 - Credit hours: 2, Grade point: 4
+Course 3 - Credit hours: 3, Grade point: 3
+Your CGPA is: 4.0
+
+### Tech Stack
+- Python
+
+### Author
+Peter Agape - https://www.linkedin.com/in/agape-peter-99807342b?utm_source=share_via&utm_content=profile&utm_medium=member_ios
